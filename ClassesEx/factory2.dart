@@ -18,7 +18,7 @@ class Comission {
 }
 
 void main() {
-  final calc = Comission(10001, .15);
+  final calc = Comission(10001, 0.15);
 
   print(calc.comission);
 }
