@@ -12,12 +12,6 @@ class User {
   }
 }
 
-class Teste {
-  String name;
-
-  Teste({required this.name});
-}
-
 void main() {
   final userMap = {'name': 'Diego', 'email': 'diego@teste.com'};
   final user = User.fromMap(userMap);
