@@ -30,4 +30,4 @@ void main() {
   print(pedro.apresentacao());
 }
 
-//Perceba que a classe Cadastro foi atribuída a pedro, e pede nome e idade que não existem nessa classe, mas existe na classe Pessoa a qual foi herdada
+//Perceba que a classe Cadastro foi atribuída a pedro, e pede nome e idade que não existem nessa classe, mas existe na classe Pessoa a qual foi herdada.
