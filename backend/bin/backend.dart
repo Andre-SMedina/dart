@@ -1,11 +1,25 @@
 import 'package:shelf/shelf.dart';
-import 'package:shelf/shelf_io.dart' as shelf_io;
 
-import 'my_server.dart';
+import 'infra/custom_server.dart';
+import 'utils/custom_env.dart';
+import 'apis/login_api.dart';
+import 'apis/blog_api.dart';
+import 'services/noticia_service.dart';
 
 void main() async {
-  var _server = MyServer();
+  var address = await CustomEnv.get(key: 'server_address');
+  var port = await CustomEnv.get(key: 'server_port');
 
-  final server = await shelf_io.serve(_server.handler, 'localhost', 8080);
-  print('Nosso seridor foi inciado http://localhost:8080');
+  var cascadeHandler = Cascade()
+      .add(LoginApi().handler)
+      .add(BlogApi(NoticiaService()).handler)
+      .handler;
+  //mostra o registro dos logs de cada acesso à API
+  var middle =
+      Pipeline().addMiddleware(logRequests()).addHandler(cascadeHandler);
+  await CustomServer().initialize(
+    handler: middle,
+    address: address,
+    port: int.parse(port),
+  );
 }
