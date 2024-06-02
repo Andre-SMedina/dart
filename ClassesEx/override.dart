@@ -30,8 +30,6 @@ void main() {
   final cliente = Cliente("Andre", "andre@.com");
   final paciente = Paciente("Andre", "12134532");
 
-  print(cliente is Pessoa);
-  print(paciente is Pessoa);
   print(cliente.pesquisar("Banco"));
   print(paciente.pesquisar("Hospital"));
 }
