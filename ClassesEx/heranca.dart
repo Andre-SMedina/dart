@@ -18,6 +18,7 @@ class Cadastro extends Pessoa {
   //Aqui é o construtor da classe Cadastro, que está pedindo nome e idade da classe Pessoa e a nacionalidade de sua própria classe. O super serve para indicar quais atributos devem ser informados da classe Pessoa.
   Cadastro(nome, idade, this.nacionalidade) : super(nome, idade);
 
+  @override
   String apresentacao() {
     final msgPessoa = super.apresentacao() + ' Nacionalidade $nacionalidade';
     return msgPessoa;
