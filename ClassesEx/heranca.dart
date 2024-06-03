@@ -1,8 +1,8 @@
 //Uma classe herda atributos de outra classe a qual foi extendida.
 
 abstract class Pessoa {
-  String nome = '';
-  int idade = 0;
+  String nome;
+  int idade;
 
   //método construtor simplificado
   Pessoa(this.nome, this.idade);
@@ -13,7 +13,7 @@ abstract class Pessoa {
 }
 
 class Cadastro extends Pessoa {
-  String nacionalidade = '';
+  String nacionalidade;
 
   //Aqui é o construtor da classe Cadastro, que está pedindo nome e idade da classe Pessoa e a nacionalidade de sua própria classe. O super serve para indicar quais atributos devem ser informados da classe Pessoa.
   Cadastro(nome, idade, this.nacionalidade) : super(nome, idade);
