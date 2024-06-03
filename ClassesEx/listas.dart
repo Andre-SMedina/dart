@@ -7,5 +7,7 @@ void main(List<String> args) {
   //interrogação serve para verificar se a lista3 é nula, se for nula ele não adiciona, se não for ele adiciona. O 7 só será adicionado se o insert for verdadeiro.
   List<int> listaTotal = [0, ...lista1, ...lista2, ...?lista3, if (insert) 7];
 
-  print(listaTotal);
+  Set<String> newSet = {'andre', 'paulo'};
+
+  print(newSet);
 }
