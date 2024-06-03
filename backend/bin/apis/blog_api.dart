@@ -16,6 +16,7 @@ class BlogApi {
       return Response.ok(noticias);
     });
     router.post('/blog/noticias', (Request req) async {
+      // ignore: unused_local_variable
       var body = await req.readAsString();
       return Response.ok('Post');
     });

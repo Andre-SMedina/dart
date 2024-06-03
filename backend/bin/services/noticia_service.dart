@@ -22,6 +22,7 @@ class NoticiaService implements GenericService<NoticiaModel> {
 
   @override
   bool save(NoticiaModel value) {
+    // ignore: unused_local_variable
     var find = _fakeDB.firstWhere((e) => e.id == value.id);
 
     return true;
